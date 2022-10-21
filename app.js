@@ -10,19 +10,19 @@ const player = document.querySelector('#player');
 const cardArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
 const unicodeCard = [
-  { unicode: 'U+1F0A1' },
-  { unicode: 'U+1F0A2' },
-  { unicode: 'U+1F0A3' },
-  { unicode: 'U+1F0A4' },
-  { unicode: 'U+1F0A5' },
-  { unicode: 'U+1F0A6' },
-  { unicode: 'U+1F0A7' },
-  { unicode: 'U+1F0A8' },
-  { unicode: 'U+1F0A9' },
-  { unicode: 'U+1F0AA' },
-  { unicode: 'U+1F0AB' },
-  { unicode: 'U+1F0AC' },
-  { unicode: 'U+1F0AD' },
+  { 'U+1F0A1': '&#127137' },
+  { 'U+1F0A2': '&#127138' },
+  { 'U+1F0A3': '&#127139' },
+  { 'U+1F0A4': '&#127140' },
+  { 'U+1F0A5': '&#127141' },
+  { 'U+1F0A6': '&#127142' },
+  { 'U+1F0A7': '&#127143' },
+  { 'U+1F0A8': '&#127144' },
+  { 'U+1F0A9': '&#127145' },
+  { 'U+1F0AA': '&#127146' },
+  { 'U+1F0AB': '&#127147' },
+  { 'U+1F0AC': '&#127149' },
+  { 'U+1F0AD': '&#127150' },
 ];
 
 // add eventlistener to three btn, run different function
