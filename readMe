@@ -17,3 +17,38 @@ for process
 
 1. try to use unicode to represent on the card object
 2. try to use array for exercising the array method
+
+reference unicode
+const cardSet1 = {
+A1: '&#127137',
+A2: '&#127138',
+A3: '&#127139',
+A4: '&#127140',
+A5: '&#127141',
+A6: '&#127142',
+A7: '&#127143',
+A8: '&#127144',
+A9: '&#127145',
+AA: '&#127146',
+AB: '&#127147',
+AC: '&#127149',
+AD: '&#127150',
+};
+
+// create ramdom number between 37-50 except 38
+const generateRandomCard = function (min = 37, max = 50) {
+// find diff
+let difference = max - min;
+// generate random number
+let range = Math.random();
+// multiply with difference
+range = Math.floor(range \* difference);
+// add with min value
+range = range + min;
+// except the number of 38 because it is not card unicode;
+if (range === 38) {
+return generateRandom();
+} else {
+return range;
+}
+};
