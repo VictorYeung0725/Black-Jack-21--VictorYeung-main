@@ -1,0 +1,19 @@
+Remark
+for rules and guide (reference)
+https://blackjackgen.netlify.app/
+
+Player will play against the dealer.
+Dealer gets two card; one is visible to player, the other is not.
+Player has the same.2 - 10 have their face value, J, Q, K have 10A has 1 (bonus question, can bear 11)
+Each round, player / dealer will be asked to deal the card (to have one more card)
+the total of cards point should not exceed 21.If exceed 21, then game over.
+Player can stop asking for cards. Whoever gets closest to 21, wins.
+
+Remark
+for logic
+
+Remark
+for process
+
+1. try to use unicode to represent on the card object
+2. try to use array for exercising the array method
