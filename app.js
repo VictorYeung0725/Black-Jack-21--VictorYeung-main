@@ -7,23 +7,66 @@ const cardContainer = document.querySelector('.card-container');
 const computer = document.querySelector('#computer');
 const player = document.querySelector('#player');
 
-const cardArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
+// cardset = 'Spades' total 52 card
+const cardSet1 = {
+  A1: '&#127137',
+  A2: '&#127138',
+  A3: '&#127139',
+  A4: '&#127140',
+  A5: '&#127141',
+  A6: '&#127142',
+  A7: '&#127143',
+  A8: '&#127144',
+  A9: '&#127145',
+  AA: '&#127146',
+  AB: '&#127147',
+  AC: '&#127149',
+  AD: '&#127150',
+};
+// Spades,Hearts,Clubs,Diamonds
+// Store 52 card inside the card_list;
+const card_list = [];
+for (let i = 0; i < 52; i++) {
+  card_list.push({
+    card: [i],
+    mark: [i],
+  });
+}
+console.log(card_list);
 
-const unicodeCard = [
-  { 'U+1F0A1': '&#127137' },
-  { 'U+1F0A2': '&#127138' },
-  { 'U+1F0A3': '&#127139' },
-  { 'U+1F0A4': '&#127140' },
-  { 'U+1F0A5': '&#127141' },
-  { 'U+1F0A6': '&#127142' },
-  { 'U+1F0A7': '&#127143' },
-  { 'U+1F0A8': '&#127144' },
-  { 'U+1F0A9': '&#127145' },
-  { 'U+1F0AA': '&#127146' },
-  { 'U+1F0AB': '&#127147' },
-  { 'U+1F0AC': '&#127149' },
-  { 'U+1F0AD': '&#127150' },
-];
+// create two list variable
+let Player_list1 = [];
+let Player_list2 = [];
 
-// add eventlistener to three btn, run different function
-btnRestart.addEventListener('click', function () {});
+const randomCard = function () {
+  cardArray.forEach(function (cardSet) {
+    return cardSet;
+  });
+};
+
+// add eventlistener to btn
+btnRestart.addEventListener('click', function () {
+  randomCard();
+  for (let i = 0; i < rardSet.length; i++) {}
+  console.log('clicked');
+});
+
+// create ramdom number between 37-50 except 38
+const generateRandomCard = function (min = 37, max = 50) {
+  // find diff
+  let difference = max - min;
+  // generate random number
+  let range = Math.random();
+  // multiply with difference
+  range = Math.floor(range * difference);
+  // add with min value
+  range = range + min;
+  // except the number of 38 because it is not card unicode;
+  if (range === 38) {
+    return generateRandom();
+  } else {
+    return range;
+  }
+};
+
+// generate 52 card
