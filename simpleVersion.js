@@ -105,10 +105,18 @@ cardDeliver();
 cardDeliver();
 
 // in every execution of step 3, check if the value is larger than 21.
-// let player_Sum = player_list.reduce(function (acc, mark) {
-//   return acc + mark;
-// }, 0);
-// console.log(player_Sum);
+let player_Sum = player_list.reduce(function (acc, mark) {
+  return acc + mark;
+}, 0);
+console.log(player_Sum);
+if (player_Sum > 21) {
+  //  first round 不可以超過21 所以 如果超過21 重新發牌
+}
+
+function gameStart() {
+  cardDeliver();
+  cardDeliver();
+}
 
 //SECTION Simplying reduce function below are simple logic without looping
 let sum = 0;
@@ -142,4 +150,4 @@ alert(`Player You can Chose 繼續發牌 or hold現有`);
 // Adding eventlistener on the Btn
 // keep.addEventListener('click', giveCardPlayer);
 // hold.addEventListener('click', giveCardComputer);
-// reStart.addEventListener('click', reSetGame);
+// reStart.addEventListener('click', gameStart);
