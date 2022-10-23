@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Black Jack</title>
-  <script src="./finishVersion.js" defer></script>
+
 </head>
 
 <style>
@@ -53,26 +53,24 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
+    position: relative;
   }
 
-  .disappear {
-    display: none;
-  }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 9.5rem;
   }
 
-  /* unicode size enlarge */
-  .card {
-    font-size: 10rem;
+  #mask {
+    position: absolute;
+
   }
 
-  .disappear {
-    display: none;
+  p {
+    margin: 1rem 0;
   }
 
   /* button styling */
@@ -130,8 +128,7 @@
       <div class="box player1 ">
         <h1>Dealer: <span id="dealer-sum"></span></h1>
         <div class="card-container" id="computer">
-          <!-- ramdom add card number by js -->
-          <p class="card">&#127137</p>
+          <img id="mask" src="./cards/BACK.png" alt="">
         </div>
       </div>
 
@@ -141,13 +138,14 @@
         </div>
       </div>
     </div>
-
+    <p id="message">按下開始遊戲</p>
     <div style='text-align:center;'>
       <button class="action-button shadow animate blue" id="keep">繼續發牌</button>
       <button class="action-button shadow animate red" id="hold">hold現有</button>
       <button class="action-button shadow animate green" id="restart">開始遊戲</button>
     </div>
   </div>
+  <script src="./finishVersion.js"></script>
 </body>
 
 </html>

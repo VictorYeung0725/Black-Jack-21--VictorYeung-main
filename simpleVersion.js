@@ -116,6 +116,15 @@ if (player_Sum > 21) {
 function gameStart() {
   cardDeliver();
   cardDeliver();
+  let player_Sum = player_list.reduce(function (acc, mark) {
+    return acc + mark;
+  }, 0);
+  console.log(player_Sum);
+  //  first round 不可以超過21 所以 如果超過21 重新發牌
+  if (player_Sum < 21) {
+  } else {
+    player_list = [];
+  }
 }
 
 //SECTION Simplying reduce function below are simple logic without looping
