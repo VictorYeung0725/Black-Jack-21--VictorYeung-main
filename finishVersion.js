@@ -78,7 +78,7 @@ let computer_sum = 0;
 let whoseTurn = 1;
 
 // delievry random one card to the player or computer
-function cardDeliver() {
+function cardDeliverToPlayer() {
   let randomCardIndex = Math.floor(Math.random() * card_list.length);
   console.log(`the card number are ${card_list[randomCardIndex]}`);
   player_list.push(card_list[randomCardIndex]);
@@ -98,8 +98,8 @@ function cardDeliverToComputer() {
 
 // player deck setting include card delivery and checking
 function player_setting() {
-  cardDeliver();
-  cardDeliver();
+  cardDeliverToPlayer();
+  cardDeliverToPlayer();
   player_sum = player_list.reduce((acc, mark) => acc + mark, 0);
   console.log(player_sum);
   addElement(player);
@@ -125,6 +125,19 @@ function addElement(host) {
   }
 }
 
+function oneMoreCard() {
+  cardDeliverToPlayer();
+  let singleCard = document.createElement('img');
+  console.log(singleCard);
+  singleCard.setAttribute(
+    'src',
+    `./cards/${player_list[Math.floor(Math.random() * play_list.length)]}-${
+      cardType[Math.floor(Math.random() * cardType.length)]
+    }.png`
+  );
+  player.appendChild(singleCard);
+}
+
 // whole game start in this function
 function gameStart() {
   //first round 檢查player 不可以超過21 所以 如果超過21 重新發牌
@@ -133,6 +146,6 @@ function gameStart() {
 }
 
 // Adding eventlistener on the Btn
-// keep.addEventListener('click');
+keep.addEventListener('click', oneMoreCard);
 // hold.addEventListener('click', giveCardComputer);
 reStart.addEventListener('click', gameStart);
