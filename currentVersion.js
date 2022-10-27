@@ -103,6 +103,9 @@ function player_setting() {
   player_sum = player_list.reduce((acc, mark) => acc + mark, 0);
   console.log(player_sum);
   addElement(player);
+  message.textContent = `第一輪：你的分數 ${player_sum}: 繼續發牌 or Hold現有 `;
+  if (player_sum > 21) {
+  }
 }
 // Computer deck setting include card delivery and checking
 function computer_setting() {
@@ -128,11 +131,10 @@ function addElement(host) {
 function oneMoreCard() {
   cardDeliverToPlayer();
   let singleCard = document.createElement('img');
-  console.log(singleCard);
   singleCard.setAttribute(
     'src',
-    `./cards/${player_list[Math.floor(Math.random() * play_list.length)]}-${
-      cardType[Math.floor(Math.random() * cardType.length)]
+    `./cards/${player_list[Math.random * player_list.length]}-${
+      cardType[Math.random * cardType.length]
     }.png`
   );
   player.appendChild(singleCard);

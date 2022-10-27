@@ -1,6 +1,6 @@
 //declared variable
-const btnRestart = document.querySelector('#restart');
 const btnKeep = document.querySelector('#keep');
+const btnRestart = document.querySelector('#restart');
 const btnHold = document.querySelector('#hold');
 
 const cardContainer = document.querySelector('.card-container');
@@ -14,13 +14,17 @@ const playerMark = document.querySelector('#player-sum');
 let dealerSum = 0;
 let playerSum = 0;
 
+// set up the status of game
+let gameStart = false;
+let gameOver = false;
+
 // for special case like card A : 1 or 11;
 let dealerAce = 0;
 let playerAce = 0;
 
 //create game_board function
-
-function game_board() {
+let card_board = [];
+const createCardDesk = function () {
   let card_values = [
     'A',
     '2',
@@ -37,34 +41,35 @@ function game_board() {
     'K',
   ];
   let card_types = ['C', 'D', 'H', 'S'];
-  let game_board = [];
 
   for (let i = 0; i < card_types.length; i++) {
     for (let j = 0; j < card_values.length; j++) {
-      game_board.push(card_values[j] + '-' + card_types[i]);
+      card_board.push(card_values[j] + '-' + card_types[i]);
     }
   }
-  console.log(game_board);
-}
-game_board();
-
-// Spades,Hearts,Clubs,Diamonds
-// Store 52 card inside the card_list;
-// const card_list = [];
-// for (let i = 0; i < 52; i++) {
-//   card_list.push({
-//     card: i,
-//   });
-// }
-// console.log(card_list);
+  console.log(card_board);
+};
+createCardDesk();
 
 // create two list variable
 let Player_list1 = [];
 let Player_list2 = [];
 
+function shuffleDeck() {
+  for (let i = 0; i < card_board.length; i++) {
+    let j = Math.floor(Math.random() * card_board.length); // (0-1) * 52 => (0-51.9999)
+    let temp = card_board[i];
+    card_board[i] = card_board[j];
+    card_board[j] = temp;
+  }
+  console.log(card_board);
+}
+
+shuffleDeck();
+
 // add eventlistener to btn
 btnRestart.addEventListener('click', function () {
   randomCard();
-  for (let i = 0; i < rardSet.length; i++) {}
+  for (let i = 0; i < cardSet.length; i++) {}
   console.log('clicked');
 });
