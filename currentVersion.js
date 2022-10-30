@@ -9,7 +9,8 @@ const hold = document.querySelector('#hold');
 const reStart = document.querySelector('#restart');
 
 // initiate a list of 2 - 10, JQK and A * 4, total 52 values - card_list
-let cardType = ['C', 'D', 'H', 'S'];
+
+let burst = false;
 
 let J = 10;
 let Q = 10;
@@ -69,6 +70,7 @@ let card_list = [
   K,
   A,
 ];
+let cardType = ['C', 'D', 'H', 'S'];
 
 // create player_list
 let player_list = [];
@@ -138,6 +140,10 @@ function oneMoreCard() {
     }.png`
   );
   player.appendChild(singleCard);
+  //check if burst
+  if (player_sum > 21) {
+    burst = true;
+  }
 }
 
 // whole game start in this function
